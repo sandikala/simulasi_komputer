@@ -1,0 +1,91 @@
+/* Katalog didaktik v1. Semua nama, spesifikasi profil, dan harga adalah data latihan.
+   Bukan produk bermerek, harga pasar, benchmark, atau rekomendasi pembelian. */
+window.PCLAB_DATA = {
+ version:'1.0.0', catalogVersion:'kelas-2026-09-v1',
+ categories:[
+  {id:'cpu',name:'Prosesor',short:'CPU',desc:'Pelaksana instruksi aplikasi',icon:'cpu'},
+  {id:'board',name:'Motherboard',short:'Board',desc:'Penghubung seluruh komponen',icon:'board'},
+  {id:'ram',name:'Memori',short:'RAM',desc:'Ruang kerja sementara',icon:'ram'},
+  {id:'gpu',name:'Kartu grafis',short:'GPU',desc:'Pemroses grafis dan visual',icon:'gpu'},
+  {id:'storage',name:'Penyimpanan',short:'SSD',desc:'Tempat sistem dan berkas',icon:'drive'},
+  {id:'psu',name:'Catu daya',short:'PSU',desc:'Pemasok daya komponen',icon:'power'},
+  {id:'case',name:'Casing',short:'Casing',desc:'Ruang dan dudukan perangkat',icon:'case'},
+  {id:'cooler',name:'Pendingin CPU',short:'Cooler',desc:'Pembuang panas prosesor',icon:'fan'}
+ ],
+ products:[
+  {id:'c-a4',cat:'cpu',name:'A4 Integrated',price:1250000,socket:'AM4',family:'A4',memory:['DDR4'],cores:4,threads:8,power:65,igpu:true,desc:'Profil hemat dengan grafis terintegrasi untuk mengenali sistem tanpa GPU diskret.'},
+  {id:'c-a6',cat:'cpu',name:'A6 Creator',price:1850000,socket:'AM4',family:'A4',memory:['DDR4'],cores:6,threads:12,power:90,igpu:false,desc:'Profil enam inti. Membutuhkan kartu grafis terpisah agar sistem memiliki keluaran gambar.'},
+  {id:'c-b6',cat:'cpu',name:'B6 Integrated',price:2900000,socket:'AM5',family:'B5',memory:['DDR5'],cores:6,threads:12,power:90,igpu:true,desc:'Profil platform AM5 dengan memori DDR5 dan grafis terintegrasi.'},
+  {id:'c-i6',cat:'cpu',name:'I6 Studio',price:2300000,socket:'LGA1700',family:'I12',memory:['DDR4','DDR5'],cores:6,threads:12,power:120,igpu:true,desc:'Profil mendukung DDR4 atau DDR5, tetapi jenis yang dapat dipasang ditentukan motherboard.'},
+  {id:'c-i8',cat:'cpu',name:'I8 Render',price:4100000,socket:'LGA1700',family:'I13',memory:['DDR4','DDR5'],cores:8,threads:16,power:180,igpu:false,desc:'Profil untuk membahas kebutuhan daya dan dukungan generasi CPU. Memerlukan GPU diskret.'},
+  {id:'b-a4',cat:'board',name:'A4 Compact D4',price:900000,socket:'AM4',families:['A4'],memory:'DDR4',form:'mATX',slots:2,maxRam:64,nvme:true,sata:true,display:true,desc:'Dua slot RAM dan satu slot M.2 NVMe. Profil motherboard microATX.'},
+  {id:'b-a4f',cat:'board',name:'A4 Expand D4',price:1450000,socket:'AM4',families:['A4'],memory:'DDR4',form:'ATX',slots:4,maxRam:128,nvme:true,sata:true,display:true,desc:'Empat slot RAM dan ukuran ATX. Periksa dukungan casing.'},
+  {id:'b-b5',cat:'board',name:'B5 Compact D5',price:2100000,socket:'AM5',families:['B5'],memory:'DDR5',form:'mATX',slots:2,maxRam:96,nvme:true,sata:true,display:true,desc:'Profil AM5 khusus DDR5. Tidak menerima CPU AM4.'},
+  {id:'b-i4',cat:'board',name:'I12 Entry D4',price:1150000,socket:'LGA1700',families:['I12'],memory:'DDR4',form:'mATX',slots:2,maxRam:64,nvme:false,sata:true,display:true,desc:'Profil sengaja dibatasi ke generasi I12 dan SSD SATA untuk latihan diagnosis.'},
+  {id:'b-i5',cat:'board',name:'I12/13 Studio D5',price:2400000,socket:'LGA1700',families:['I12','I13'],memory:'DDR5',form:'ATX',slots:4,maxRam:128,nvme:true,sata:true,display:true,desc:'Profil dengan dukungan I12 dan I13. Soket sama saja belum cukup untuk memastikan dukungan CPU.'},
+  {id:'r-8',cat:'ram',name:'DDR4 8 GB',price:280000,type:'DDR4',gb:8,modules:1,speed:3200,desc:'Satu modul 8 GB. Harga adalah harga satu paket.'},
+  {id:'r-16',cat:'ram',name:'DDR4 16 GB Kit',price:550000,type:'DDR4',gb:16,modules:2,speed:3200,desc:'Dua modul, masing-masing 8 GB. Membutuhkan dua slot kosong.'},
+  {id:'r-32',cat:'ram',name:'DDR4 32 GB Kit',price:1000000,type:'DDR4',gb:32,modules:2,speed:3200,desc:'Dua modul, masing-masing 16 GB. Kapasitas total 32 GB.'},
+  {id:'r-4x',cat:'ram',name:'DDR4 32 GB / 4 modul',price:1050000,type:'DDR4',gb:32,modules:4,speed:3200,desc:'Empat modul 8 GB. Latihan membedakan kapasitas total dan jumlah slot.'},
+  {id:'r-d16',cat:'ram',name:'DDR5 16 GB Kit',price:800000,type:'DDR5',gb:16,modules:2,speed:4800,desc:'Dua modul DDR5. Secara fisik tidak dapat menggantikan DDR4.'},
+  {id:'r-d32',cat:'ram',name:'DDR5 32 GB Kit',price:1400000,type:'DDR5',gb:32,modules:2,speed:5600,desc:'Kapasitas total 32 GB. Kecepatan aktual bergantung dukungan CPU dan motherboard.'},
+  {id:'g-none',cat:'gpu',name:'Gunakan grafis terintegrasi',price:0,vram:0,power:0,length:0,pins:0,desc:'Tanpa kartu tambahan. Hanya bekerja jika CPU memiliki grafis terintegrasi dan board menyediakan keluaran layar.'},
+  {id:'g-4',cat:'gpu',name:'Visual 4 GB',price:1800000,vram:4,power:75,length:180,pins:0,desc:'Profil GPU ringkas dengan daya dari slot PCIe. Memori grafis 4 GB.'},
+  {id:'g-8',cat:'gpu',name:'Creator 8 GB',price:3400000,vram:8,power:160,length:260,pins:1,desc:'Profil GPU dengan satu konektor daya PCIe 8-pin. Panjang kartu 260 mm.'},
+  {id:'g-12',cat:'gpu',name:'Render 12 GB',price:5000000,vram:12,power:240,length:320,pins:2,desc:'Profil GPU panjang dengan dua konektor PCIe 8-pin. Periksa ruang dan catu daya.'},
+  {id:'s-256',cat:'storage',name:'SATA SSD 256 GB',price:300000,gb:256,interface:'SATA',size:'2.5 inci',desc:'Memerlukan sambungan data SATA ke board dan daya SATA dari PSU.'},
+  {id:'s-512',cat:'storage',name:'NVMe SSD 512 GB',price:550000,gb:512,interface:'NVMe',size:'M.2 2280',desc:'Profil SSD M.2 yang memakai protokol NVMe. Periksa dukungan slot, bukan hanya bentuk.'},
+  {id:'s-1t',cat:'storage',name:'NVMe SSD 1 TB',price:950000,gb:1000,interface:'NVMe',size:'M.2 2280',desc:'Kapasitas nominal 1 TB untuk aset proyek. Data simulasi memakai 1 TB = 1.000 GB.'},
+  {id:'s-s1t',cat:'storage',name:'SATA SSD 1 TB',price:850000,gb:1000,interface:'SATA',size:'2.5 inci',desc:'Alternatif kapasitas 1 TB untuk board yang mendukung SATA.'},
+  {id:'p-300',cat:'psu',name:'Lab Power 300',price:300000,watts:300,pins:0,form:'ATX',desc:'Profil latihan 300 W tanpa konektor GPU 8-pin. Semua profil menyediakan daya utama board, CPU, dan SATA.'},
+  {id:'p-450',cat:'psu',name:'Lab Power 450',price:550000,watts:450,pins:1,form:'ATX',desc:'Profil 450 W dengan satu konektor GPU PCIe 8-pin.'},
+  {id:'p-650',cat:'psu',name:'Lab Power 650',price:950000,watts:650,pins:2,form:'ATX',desc:'Profil 650 W dengan dua konektor GPU PCIe 8-pin.'},
+  {id:'p-s650',cat:'psu',name:'Compact Power 650',price:1300000,watts:650,pins:2,form:'SFX',desc:'Profil PSU format SFX. Casing dalam latihan harus mendukung SFX atau adapter yang dicantumkan.'},
+  {id:'k-mini',cat:'case',name:'Compact Air',price:450000,forms:['mATX','Mini-ITX'],psu:['ATX'],gpuMax:250,coolerMax:150,desc:'Casing kecil. Batas GPU 250 mm dan pendingin CPU 150 mm.'},
+  {id:'k-mid',cat:'case',name:'Studio Air',price:700000,forms:['ATX','mATX','Mini-ITX'],psu:['ATX'],gpuMax:340,coolerMax:170,desc:'Mid-tower untuk ATX atau board yang lebih kecil. Kipas casing dasar termasuk.'},
+  {id:'k-sfx',cat:'case',name:'Compact SFX',price:900000,forms:['mATX','Mini-ITX'],psu:['SFX'],gpuMax:280,coolerMax:145,desc:'Profil casing ringkas khusus PSU SFX. Kapasitas ruang perlu diperiksa.'},
+  {id:'f-basic',cat:'cooler',name:'Low Profile A',price:180000,sockets:['AM4','AM5'],height:70,thermal:100,desc:'Profil pendingin rendah untuk soket AM4/AM5. Batas termal didaktik 100 W.'},
+  {id:'f-tower',cat:'cooler',name:'Tower Universal',price:400000,sockets:['AM4','AM5','LGA1700'],height:155,thermal:180,desc:'Profil pendingin dengan kit pemasangan tiga soket. Tinggi 155 mm.'},
+  {id:'f-dual',cat:'cooler',name:'Dual Tower Studio',price:750000,sockets:['AM4','AM5','LGA1700'],height:165,thermal:240,desc:'Profil pendingin besar. Batas termal dalam simulator bukan standar sertifikasi produk nyata.'}
+ ],
+ scenarios:[
+  {id:'free',name:'Eksplorasi bebas',budget:10000000,desc:'Coba berbagai kombinasi dan jelaskan konsekuensinya.',requirements:{},task:'Temukan satu pasangan komponen yang tidak sesuai, lalu perbaiki alasannya.'},
+  {id:'basic',name:'01 · Laboratorium dasar',budget:6000000,desc:'Rancang PC untuk pembelajaran, desain ringan, dan pengelolaan berkas.',requirements:{cores:4,ram:16,storage:512,vram:0},task:'Prioritaskan kebutuhan dasar. Apakah GPU diskret diperlukan dalam rancangan ini?'},
+  {id:'video',name:'02 · Studio video 1080p',budget:10000000,desc:'Latihan menentukan prioritas komponen untuk proyek video mahasiswa.',requirements:{cores:6,ram:32,storage:1000,vram:8},task:'Penuhi target kelas sambil menjaga anggaran. Jelaskan alasan kapasitas RAM dan penyimpanan.'},
+  {id:'render',name:'03 · Studio 3D',budget:17000000,desc:'Bandingkan kebutuhan memori grafis, ruang casing, dan daya.',requirements:{cores:8,ram:32,storage:1000,vram:12},task:'Temukan rancangan sesuai batas kelas dan jelaskan satu peluang peningkatan.'}
+ ],
+ presets:{basic:{cpu:'c-a4',board:'b-a4',ram:'r-16',gpu:'g-none',storage:'s-512',psu:'p-450',case:'k-mini',cooler:'f-basic'},video:{cpu:'c-a6',board:'b-a4',ram:'r-32',gpu:'g-8',storage:'s-1t',psu:'p-450',case:'k-mid',cooler:'f-basic'},render:{cpu:'c-i8',board:'b-i5',ram:'r-d32',gpu:'g-12',storage:'s-1t',psu:'p-650',case:'k-mid',cooler:'f-dual'}},
+ learn:{
+ cpu:{name:'CPU / prosesor',body:'CPU menjalankan instruksi program. Jumlah inti membantu memahami kemampuan menjalankan pekerjaan paralel, tetapi tidak cukup untuk membandingkan performa nyata.',check:'Periksa soket, daftar CPU yang didukung, versi BIOS, dan kebutuhan pendinginan.',question:'Soket sama, pasti cocok?',answer:'Belum tentu. Daftar dukungan generasi CPU dan versi BIOS motherboard juga menentukan.'},
+ board:{name:'Motherboard',body:'Motherboard menyediakan jalur dan konektor agar CPU, RAM, penyimpanan, dan perangkat tambahan dapat berkomunikasi.',check:'Periksa soket, jenis RAM, jumlah slot, port penyimpanan, dan ukuran board.',question:'Mengapa ukuran board penting?',answer:'Titik pemasangan dan ruang di casing harus mendukung format board, misalnya ATX atau microATX.'},
+ ram:{name:'RAM / memori kerja',body:'RAM menyimpan data sementara yang sedang dipakai aplikasi. Saat daya mati, isi RAM tidak dipertahankan seperti pada SSD.',check:'Periksa DDR4 atau DDR5, kapasitas maksimum, jumlah modul, dan slot.',question:'RAM 32 GB selalu memakai satu slot?',answer:'Tidak. Paket 32 GB dapat berisi dua modul 16 GB atau empat modul 8 GB.'},
+ gpu:{name:'GPU / pengolah grafis',body:'GPU mengolah tugas grafis. GPU diskret memiliki memori grafis sendiri (VRAM). Sebagian CPU memiliki GPU terintegrasi yang memakai memori sistem.',check:'Periksa keluaran gambar, panjang kartu, kebutuhan daya, dan konektor PSU.',question:'Bisakah PC bekerja tanpa kartu grafis tambahan?',answer:'Bisa, jika CPU memiliki grafis terintegrasi dan motherboard menyediakan keluaran gambar yang sesuai.'},
+ storage:{name:'SSD / penyimpanan',body:'SSD menyimpan sistem operasi, aplikasi, dan aset multimedia. Berkas tetap tersimpan saat komputer dimatikan.',check:'Periksa kapasitas, protokol SATA atau NVMe, bentuk fisik, dan dukungan slot.',question:'M.2 berarti selalu NVMe?',answer:'Tidak. M.2 adalah bentuk fisik. Protokol yang didukung perangkat dan slot tetap perlu dicocokkan.'},
+ psu:{name:'PSU / catu daya',body:'PSU mengubah suplai listrik menjadi daya DC yang dibutuhkan komponen. Kapasitas watt, kualitas unit, dan konektor perlu diperiksa.',check:'Periksa kapasitas daya, konektor, format PSU, serta rekomendasi produsen.',question:'PSU 650 W terus memakai listrik 650 W?',answer:'Tidak. Angka itu kapasitas keluaran. Konsumsi dari stopkontak bergantung beban sistem dan efisiensi.'},
+ case:{name:'Casing',body:'Casing menyediakan tempat, dudukan, serta aliran udara untuk perangkat. Ukuran luarnya saja belum menjelaskan komponen apa yang muat.',check:'Periksa format board dan PSU, panjang GPU, tinggi cooler, serta dudukan SSD.',question:'Casing besar menjamin suhu rendah?',answer:'Tidak. Aliran udara, penempatan kipas, dan penghalang aliran tetap berpengaruh.'},
+ cooler:{name:'Pendingin CPU',body:'Pendingin memindahkan panas dari CPU melalui permukaan kontak dan heatsink. Kipas membantu melepas panas ke udara.',check:'Periksa kit soket, tinggi, pasta termal, konektor kipas, dan petunjuk produsen.',question:'Pendingin sudah menempel, apa lagi yang diperiksa?',answer:'Periksa pemasangan, pasta termal sesuai petunjuk, pelepasan film pelindung jika ada, dan koneksi CPU_FAN.'}
+ },
+ quiz:[
+ {q:'CPU AM4 dipilih bersama motherboard AM5. Apa yang harus diperbaiki?',options:['Tambah kapasitas SSD','Cocokkan soket CPU dan motherboard','Pilih PSU lebih besar'],answer:1,explain:'Soket CPU dan motherboard harus sesuai. RAM atau PSU tidak memperbaiki perbedaan soket.'},
+ {q:'Motherboard DDR4 dipasangkan dengan RAM DDR5. Apa kesimpulannya?',options:['Tidak sesuai secara fisik dan elektrik','Berfungsi jika kapasitasnya sama','Berfungsi jika PSU 650 W'],answer:0,explain:'DDR4 dan DDR5 bukan modul yang saling menggantikan. Periksa spesifikasi motherboard.'},
+ {q:'CPU tidak memiliki grafis terintegrasi dan GPU diskret belum dipilih. Apa yang hilang?',options:['Penyimpanan permanen','Sumber keluaran grafis untuk layar','Kapasitas RAM'],answer:1,explain:'Untuk rancangan desktop ini dibutuhkan GPU diskret jika CPU tidak menyediakan grafis terintegrasi.'},
+ {q:'Kit RAM 4 × 8 GB akan dipasang pada motherboard dua slot. Mengapa gagal?',options:['32 GB pasti terlalu besar','Kecepatan RAM terlalu tinggi','Jumlah modul melebihi slot'],answer:2,explain:'Kapasitas dan jumlah modul adalah dua pemeriksaan terpisah. Dua slot tidak menampung empat modul.'},
+ {q:'GPU membutuhkan dua konektor PCIe 8-pin. PSU 650 W hanya menyediakan satu. Apa kesimpulannya?',options:['Belum sesuai meskipun watt cukup','Pasti sesuai karena 650 W','Konektor CPU dapat langsung menggantikannya'],answer:0,explain:'Periksa jenis dan jumlah konektor yang benar. Jangan menyamakan kabel daya CPU dengan kabel GPU.'},
+ {q:'Apa perbedaan RAM dan SSD?',options:['Keduanya hanya penyimpanan sementara','RAM ruang kerja sementara, SSD menyimpan berkas','SSD menggantikan seluruh fungsi RAM'],answer:1,explain:'RAM menyimpan data kerja aktif. SSD mempertahankan data saat daya dimatikan.'},
+ {q:'M.2 pada spesifikasi SSD menjelaskan apa?',options:['Bentuk fisik, bukan otomatis protokol NVMe','Jaminan kecepatan aplikasi','Jumlah inti CPU'],answer:0,explain:'M.2 adalah bentuk fisik. Cocokkan protokol, panjang modul, key, dan dukungan slot.'},
+ {q:'Semua pemeriksaan simulator lulus. Apa langkah sebelum merakit perangkat nyata?',options:['Langsung menyalakan tanpa inspeksi','Mengabaikan manual karena model sudah cocok','Memeriksa manual, dukungan BIOS, QVL, dan spesifikasi aktual'],answer:2,explain:'Simulator menyederhanakan kompatibilitas. Dokumentasi produk dan pemeriksaan fisik tetap diperlukan.'}
+ ],
+ steps:[
+ {id:'safe',name:'Persiapan aman',requires:[],body:'Matikan dan putuskan sumber listrik. Siapkan meja, penanganan ESD, obeng, dan manual. Jangan membuka rumah PSU.'},
+ {id:'cpu',name:'CPU ke soket',requires:['safe'],body:'Cocokkan penanda orientasi. Pasang sesuai manual tanpa memaksa pin atau kontak.'},
+ {id:'ram',name:'Modul RAM',requires:['safe'],body:'Cocokkan takik RAM dan slot yang disarankan manual. Periksa pengunci terpasang.'},
+ {id:'ssd',name:'Penyimpanan',requires:['safe'],body:'Untuk NVMe, pasang pada slot M.2 yang sesuai. Untuk SATA, pasang di dudukan drive dan siapkan kabel data/daya.'},
+ {id:'cooler',name:'Pendingin CPU',requires:['cpu'],body:'Ikuti petunjuk pasta termal dan mounting. Hubungkan kipas ke header CPU_FAN.'},
+ {id:'board',name:'Board ke casing',requires:['cpu','ram','ssd','cooler'],body:'Latihan memakai sub-rakitan di luar casing. Periksa standoff sesuai lubang board dan pelat I/O jika terpisah.'},
+ {id:'psu',name:'PSU ke casing',requires:['safe'],body:'Pasang PSU dengan orientasi ventilasi sesuai casing. Gunakan kabel bawaan atau kabel yang dinyatakan kompatibel oleh produsen.'},
+ {id:'gpu',name:'Pemeriksaan grafis',requires:['board','psu'],body:'Jika memakai GPU diskret, pasang di PCIe x16 dan kencangkan bracket. Jika terintegrasi, konfirmasi dukungan CPU dan port layar board.'},
+ {id:'cables',name:'Sambungan daya dan panel',requires:['board','psu','gpu'],body:'Periksa daya board 24-pin, daya CPU, daya GPU bila dibutuhkan, SATA bila ada, serta front panel sesuai manual.'},
+ {id:'inspect',name:'Inspeksi sebelum daya',requires:['cables'],body:'Pastikan tidak ada baut lepas, konektor belum terkunci, atau kabel mengganggu kipas. Hubungkan monitor ke keluaran grafis yang dipilih.'},
+ {id:'post',name:'Uji POST / BIOS',requires:['inspect'],body:'Setelah inspeksi, sambungkan daya dan lakukan uji awal. Periksa deteksi CPU, RAM, penyimpanan, kipas, dan suhu melalui BIOS/UEFI.'}
+ ]
+};
