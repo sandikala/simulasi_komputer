@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "catalogVersion": "kelas-2026-09-v1",
+  "build": {
+    "cpu": "c-a4",
+    "board": "b-a4",
+    "ram": "r-16",
+    "gpu": "g-none",
+    "storage": "s-512",
+    "psu": "p-450",
+    "case": "k-mini",
+    "cooler": "f-basic"
+  },
+  "budget": 6000000,
+  "scenario": "basic",
+  "name": "",
+  "group": "",
+  "reasons": [
+    "",
+    "",
+    ""
+  ],
+  "quiz": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "assembly": []
+}
